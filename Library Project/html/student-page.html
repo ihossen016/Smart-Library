@@ -1,0 +1,149 @@
+<html>
+<head>
+    <title>Smart Library Card</title>
+    <link rel="stylesheet" type="text/css" href="../css/student-page-style.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <nav>
+       <a href="student-page.html"><img src="../image/LC%202.png" width="100" height="80"></a>
+        <ul>
+            <li class="active"><a href="student-page.html"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="student-profile.html"><i class="fa fa-user-circle"></i>My Profile</a></li>
+            <li><a href="my-shelve.html"><i class="fa fa-archive"></i>My Shelve</a></li>
+            <li><a href="http://www.freebookcentre.net/"><i class="fa fa-book"></i>E-Book</a></li>
+            <li><a href="https://www.plos.org/"><i class="fa fa-newspaper-o"></i>Jounrals</a></li>
+            <li><a href="https://www.youtube.com/channel/UC5iSA7haq7gAE5tRDuspxMw"><i class="fa fa-youtube-play"></i>Toutorials</a></li>
+            <li><a href="student-login.html"><i class="fa fa-sign-out"></i>Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+       <div class="search-box">
+           <input type="text" id="myinput" placeholder="Enter Book Name" onkeyup="searchfun()">
+            <i class="fa fa-search"></i> 
+       </div>
+        <div class="tb">
+        <table style="width: 100%" id="mytable">
+            <tr class="header">
+                <th width="55%">Book Name</th>
+                <th width="45%">Author Name</th>
+            </tr>
+            <tr>
+                <td>Compilers: Principles, Techniques and Tools</td>
+                <td id="cl">Alfred V. Aho</td>
+            </tr>
+            <tr>
+                <td>Principles of Compiler Design</td>
+                <td id="cl">Alfred V. Aho</td>
+            </tr>
+            <tr>
+                <td>Introduction to Computers</td>
+                <td id="cl">Peter Norton</td>
+            </tr>
+            <tr>
+                <td>Computer Fundamentals</td>
+                <td id="cl">M. Lutfar Rahman</td>
+            </tr>
+            <tr>
+                <td>System Analysis and Design: A Practioner's Approach</td>
+                <td id="cl">Munawar Hafiz</td>
+            </tr>
+            <tr>
+                <td>System Analysis and Design</td>
+                <td id="cl">Elias M. Awad</td>
+            </tr>
+            <tr>
+                <td>Computer System Architecture</td>
+                <td id="cl">M. Morris Mano</td>
+            </tr>
+            <tr>
+                <td>Fundamentals of Computer Algorithms</td>
+                <td id="cl">Ellis Horowitz</td>
+            </tr>
+            <tr>
+                <td>Computer Organization and Design: The Hardware and Software Interface</td>
+                <td id="cl">David A. Patterson</td>
+            </tr>
+            <tr>
+                <td>Microprocessor Data Handbook</td>
+                <td id="cl">BPB Publications</td>
+            </tr>
+            <tr>
+                <td>Microprocessor and Microcomputer-based System Design</td>
+                <td id="cl">Md. Rafiquzzaman</td>
+            </tr>
+            <tr>
+                <td>Microprocessor X86 Programming</td>
+                <td id="cl">K.R. Venugopal</td>
+            </tr>
+            <tr>
+                <td>The Intel Microprocessors: Architecture, Programming & Interfacing</td>
+                <td id="cl">Barry B. Brey</td>
+            </tr>
+            <tr>
+                <td>Digital Electronics and Microprocessors</td>
+                <td id="cl">N.K. Datta</td>
+            </tr>
+            <tr>
+                <td>System Simulation</td>
+                <td id="cl">Geoffrey Gordon</td>
+            </tr>
+            <tr>
+                <td>Computer System Architecture</td>
+                <td id="cl">M. Morris Mano</td>
+            </tr>
+            <tr>
+                <td>Data & Computer Communications</td>
+                <td id="cl">William Stallings</td>
+            </tr>
+            <tr>
+                <td>Business Data Communications</td>
+                <td id="cl">William Stallings</td>
+            </tr>
+            <tr>
+                <td>Red Hat Linux Networking & System Administration</td>
+                <td id="cl">Terry Collings and Kurt Wall</td>
+            </tr>
+            <tr>
+                <td>Computer Networks</td>
+                <td id="cl">Tanenbaum</td>
+            </tr>
+            <tr>
+                <td>ISDN & Broadband ISDN with Frame Relay & ATM</td>
+                <td id="cl">William Stallings</td>
+            </tr>
+            <tr>
+                <td>Data Communications & Networking</td>
+                <td id="cl">Forouzan</td>
+            </tr>
+            <tr>
+                <td>Computer Networking: A Top Down Approach Featuring the Internet</td>
+                <td id="cl">James F. Kurose</td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    <script>
+        const searchfun= () =>{
+            let filter = document.getElementById('myinput').value.toUpperCase();
+            let mytable = document.getElementById('mytable');
+            let tr = mytable.getElementsByTagName('tr');
+            
+            for(var i=0; i<tr.length; i++){
+                let td = tr[i].getElementsByTagName('td')[0];
+                
+                if(td){
+                    let textvalue = td.textContent || td.innerHTML;
+                    
+                    if(textvalue.toLocaleUpperCase().lastIndexOf(filter) > -1){
+                        tr[i].style.display ="";
+                    }
+                    else{
+                       tr[i].style.display ="none"; 
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

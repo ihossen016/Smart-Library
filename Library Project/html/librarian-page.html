@@ -1,0 +1,172 @@
+<html>
+<head>
+    <title>Librarian</title>
+    <link rel="stylesheet" href="../css/librarian-page-style.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <div>
+    <nav>
+      <a href="librarian-page.html"><img src="../image/LC%202.png" width="100" height="80"></a>
+       <div class="search-box">
+         <input type="int" id="myinput" placeholder="Enter Student ID" onkeyup="searchfun()">
+         <i class="fa fa-search"></i>
+       </div>
+       <div class="dropdown">
+           <button>About</button>
+           <ul>
+               <li><a href="librarian-profile.html"><i class="fa fa-user"></i>My Profile</a></li>
+               <li><a href="librarian-login.html"><i class="fa fa-sign-out"></i>Logout</a></li>
+           </ul>
+       </div>
+    </nav>
+    <div class="container">
+        <div id="column1">
+            <ul>
+                <li><a href="book-request.html">Book Request</a></li>
+                <li><a href="book-borrowed.html">Book Borrowed</a></li>
+                <li><a href="issue-book.html">Issue Book</a></li>
+            </ul>
+        </div>
+        <div id="column2">
+            <table id="mytable">
+            <tr class="header">
+                <th width="30%">Student Id</th>
+                <th width="70%">Book Name</th>
+            </tr>
+            <tr>
+                <td id="cl">17151001</td>
+                <td>Principles of Compiler Design</td>
+            </tr>
+            <tr>
+                <td id="cl">17151002</td>
+                <td>Introduction to Computers</td>
+                
+            </tr>
+            <tr>
+                <td id="cl">17151003</td>
+                <td>Computer Fundamentals</td>
+            </tr>
+            <tr>
+                <td id="cl">17151004</td>
+                <td>System Analysis and Design: A Practioner's Approach</td>
+            </tr>
+            <tr>
+                <td id="cl">17151005</td>
+                <td>System Analysis and Design</td>
+            </tr>
+            <tr>
+                <td id="cl">17151006</td>
+                <td>Computer System Architecture</td>
+            </tr>
+            <tr>
+                <td id="cl">17151007</td>
+                <td>Fundamentals of Computer Algorithms</td>
+            </tr>
+            <tr>
+                <td id="cl">17151008</td>
+                <td>Computer Organization and Design: The Hardware and Software Interface</td>
+            </tr>
+            <tr>
+                <td id="cl">17151009</td>
+                <td>Microprocessor Data Handbook</td>
+            </tr>
+            <tr>
+                <td id="cl">17151010</td>
+                <td>Microprocessor and Microcomputer-based System Design</td>
+            </tr>
+            <tr>
+                <td id="cl">17151011</td>
+                <td>Microprocessor X86 Programming</td>
+            </tr>
+            <tr>
+                <td id="cl">17151012</td>
+                <td>The Intel Microprocessors: Architecture, Programming & Interfacing</td>
+            </tr>
+            <tr>
+                <td id="cl">17151013</td>
+                <td>Digital Electronics and Microprocessors</td>
+            </tr>
+            <tr>
+                <td id="cl">17151014</td>
+                <td>System Simulation</td>
+            </tr>
+            <tr>
+                <td id="cl">17151015</td>
+                <td>Computer System Architecture</td>
+            </tr>
+            <tr>
+                <td id="cl">17151016</td>
+                <td>Compilers: Principles, Techniques and Tools</td>
+            </tr>
+            <tr>
+                <td id="cl">17151017</td>
+                <td>Data & Computer Communications</td>
+            </tr>
+            <tr>
+                <td id="cl">17151018</td>
+                <td>Business Data Communications</td>
+            </tr>
+            <tr>
+                <td id="cl">17151019</td>
+                <td>Red Hat Linux Networking & System Administration</td>
+            </tr>
+            <tr>
+                <td id="cl">17151020</td>
+                <td>Computer Networks</td>
+            </tr>
+            <tr>
+                <td id="cl">17151021</td>
+                <td>ISDN & Broadband ISDN with Frame Relay & ATM</td>
+            </tr>
+            <tr>
+                <td id="cl">17151022</td>
+                <td>Data Communications & Networking</td>
+            </tr>
+            <tr>
+                <td id="cl">17151023</td>
+                <td>Computer Networking: A Top Down Approach Featuring the Internet</td>
+            </tr>
+        </table>
+        </div>
+        <div id="column3">
+            <ul>
+                <li><a href="booklist.html">Book List</a></li>
+                <li><a href="">E-Book List</a></li>
+                <li><a href="update-booklist.html">Update Book List</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('ul').toggleClass('active')
+            })
+        })
+        const searchfun= () =>{
+            let filter = document.getElementById('myinput').value.toUpperCase();
+            let mytable = document.getElementById('mytable');
+            let tr = mytable.getElementsByTagName('tr');
+            
+            for(var i=0; i<tr.length; i++){
+                let td = tr[i].getElementsByTagName('td')[0];
+                
+                if(td){
+                    let textvalue = td.textContent || td.innerHTML;
+                    
+                    if(textvalue.toUpperCase().lastIndexOf(filter) > -1){
+                        tr[i].style.display ="";
+                    }
+                    else{
+                       tr[i].style.display ="none"; 
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

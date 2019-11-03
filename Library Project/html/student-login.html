@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Student Login</title>
+    <link href="../css/student-login-style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+   <div class="std">
+   <div class="form-box">
+    <div class="btn-box">
+        <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Login</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
+    </div>
+        <div class="slide" id="login">
+            <input type="text" class="input-field" placeholder="Username">
+            <input type="password" class="input-field" placeholder="Password">
+            <input type="checkbox" class="check-box"><span>Remember Username & Password</span>
+            <a href="student-page.html"><button type="submit" class="submit-btn">Login</button></a>
+            <li><a href="../index.html">Return to Home</a></li>
+        </div>
+        <div class="slide" id="register">
+            <input type="text" class="input-field" placeholder="Username">
+            <input type="email" class="input-field" placeholder="Email">
+            <input type="password" class="input-field" placeholder="Password">
+            <input type="password" class="input-field" placeholder="Confirm Password">
+            <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>    
+            <a href="student-login-form.html"><button type="submit" class="submit-btn">Continue</button>
+            </a>
+        </div>
+    </div>
+    </div>
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+        
+        function register(){
+            x.style.left="-400px";
+            y.style.left="50px";
+            z.style.left="110px";
+        }
+        function login(){
+            x.style.left="50px";
+            y.style.left="450px";
+            z.style.left="0";
+        }
+    
+    </script>
+    
+</body>
+</html>

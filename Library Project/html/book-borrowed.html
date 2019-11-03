@@ -1,0 +1,178 @@
+<html>
+<head>
+    <title>Book Borrowed</title>
+    <link rel="stylesheet" href="../css/book-borrowed-style.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <div>
+    <nav>
+      <a href="librarian-page.html"><img src="../image/LC%202.png" width="100" height="80"></a>
+       <div class="search-box">
+         <input type="int" id="myinput" placeholder="Enter Student ID " onkeyup="searchfun()">
+         <i class="fa fa-search"></i>
+       </div>
+       <div class="dropdown">
+           <button>About</button>
+           <ul>
+               <li><a href="librarian-profile.html"><i class="fa fa-user"></i>My Profile</a></li>
+               <li><a href="librarian-login.html"><i class="fa fa-sign-out"></i>Logout</a></li>
+           </ul>
+       </div>
+    </nav>
+    <div class="tb">
+            <table style="width: 100%" id="mytable">
+            <tr class="header">
+                <th width="20%">Student Id</th>
+                <th width="60%">Book Name</th>
+                <th width="20%">Date</th>
+            </tr>
+            <tr>
+                <td id="cl">17151081</td>
+                <td>Principles of Compiler Design</td>
+                <td id="cl">26-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151062</td>
+                <td>Introduction to Computers</td>
+                <td id="cl">26-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151003</td>
+                <td>Computer Fundamentals</td>
+                <td id="cl">26-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151024</td>
+                <td>System Analysis and Design: A Practioner's Approach</td>
+                <td id="cl">26-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151015</td>
+                <td>System Analysis and Design</td>
+                <td id="cl">26-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151016</td>
+                <td>Computer System Architecture</td>
+                <td id="cl">27-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151007</td>
+                <td>Fundamentals of Computer Algorithms</td>
+                <td id="cl">27-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151038</td>
+                <td>Computer Organization and Design: The Hardware and Software Interface</td>
+                <td id="cl">27-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151009</td>
+                <td>Microprocessor Data Handbook</td>
+                <td id="cl">28-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151030</td>
+                <td>Microprocessor and Microcomputer-based System Design</td>
+                <td id="cl">28-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151041</td>
+                <td>Microprocessor X86 Programming</td>
+                <td id="cl">28-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151072</td>
+                <td>The Intel Microprocessors: Architecture, Programming & Interfacing</td>
+                <td id="cl">28-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151023</td>
+                <td>Digital Electronics and Microprocessors</td>
+                <td id="cl">28-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151034</td>
+                <td>System Simulation</td>
+                <td id="cl">28-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151005</td>
+                <td>Computer System Architecture</td>
+                <td id="cl">29-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151016</td>
+                <td>Compilers: Principles, Techniques and Tools</td>
+                <td id="cl">29-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151027</td>
+                <td>Data & Computer Communications</td>
+                <td id="cl">29-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151018</td>
+                <td>Business Data Communications</td>
+                <td id="cl">30-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151022</td>
+                <td>Red Hat Linux Networking & System Administration</td>
+                <td id="cl">30-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151020</td>
+                <td>Computer Networks</td>
+                <td id="cl">30-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151021</td>
+                <td>ISDN & Broadband ISDN with Frame Relay & ATM</td>
+                <td id="cl">30-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151016</td>
+                <td>Data Communications & Networking</td>
+                <td id="cl">30-10-19</td>
+            </tr>
+            <tr>
+                <td id="cl">17151011</td>
+                <td>Computer Networking: A Top Down Approach Featuring the Internet</td>
+                <td id="cl">30-10-19</td>
+            </tr>
+        </table>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('ul').toggleClass('active')
+            })
+        })
+        const searchfun= () =>{
+            let filter = document.getElementById('myinput').value.toUpperCase();
+            let mytable = document.getElementById('mytable');
+            let tr = mytable.getElementsByTagName('tr');
+            
+            for(var i=0; i<tr.length; i++){
+                let td = tr[i].getElementsByTagName('td')[0];
+                
+                if(td){
+                    let textvalue = td.textContent || td.innerHTML;
+                    
+                    if(textvalue.toUpperCase().lastIndexOf(filter) > -1){
+                        tr[i].style.display ="";
+                    }
+                    else{
+                       tr[i].style.display ="none"; 
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

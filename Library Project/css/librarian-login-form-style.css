@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+body{
+    background: url(../image/li.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container{
+    margin-top: 50px;
+    width: 500px;
+    height: 950px;
+    background: linear-gradient(to right,#F47F5C,#F4C085);;
+    margin-left: 30%;
+    display: flex;
+    box-shadow: 0 0 20px 10px #000;
+}
+.btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-top: 40px;
+    background: linear-gradient(to right,#ff105f,#ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.form-box{
+    width: 380px;
+    height: 100%;
+    margin-left: 18%;
+    position: relative;
+    overflow: hidden;
+}
+.input-group{
+    top: 100px;
+    width: 85%;
+    position: absolute;
+    transition: 0.5s;
+}
+.input-group a{
+    text-decoration: none;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: 1px solid #999;
+    outline: none;
+    background: #0002;
+}
+.submit-btn{
+    text-align: center;
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+    background: linear-gradient(to right,#ff105f,#ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    margin-left: 8%;
+}
+h4{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    
+}

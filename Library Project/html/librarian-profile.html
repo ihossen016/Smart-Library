@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Smart Library Card</title>
+    <link rel="stylesheet" type="text/css" href="../css/librarian-profile-style.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <nav>
+       <a href="librarian-page.html"><img src="../image/LC%202.png" width="100" height="80"></a>
+       <div class="dropdown">
+           <button>About</button>
+           <ul>
+               <li><a href="librarian-profile.html"><i class="fa fa-user"></i>My Profile</a></li>
+               <li><a href="librarian-login.html"><i class="fa fa-sign-out"></i>Logout</a></li>
+           </ul>
+       </div>
+   </nav>
+    <div class="container">
+        <img src="../image/ashraful.jpg" width="150px" height="150px">
+        <div class="row">
+            <div id="column1">
+               <ul>
+                   <li>Name   :</li>
+                   <li>E-Mail :</li>
+                   <li>Phone  :</li>
+                   <li>DoB    :</li>
+                   <li>Gender :</li>
+                   <li>Father Name :</li>
+                   <li>Mother Name :</li>
+                   <li>Address :</li>
+               </ul>        
+            </div>
+            <div id="column2">
+               <ul>
+                   <li>Md. Ashraful Islam</li>
+                   <li>asad.bosom@gmail.com</li>
+                   <li>01517124960</li>
+                   <li>6 Octobor 1998</li>
+                   <li>Male</li>
+                   <li>l</li>
+                   <li>k</li>
+                   <li>701,East Nayanagor Fashertek <br>Vatara, Dhaka-1212.</li>
+               </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('ul').toggleClass('active')
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<html>
+<head>
+    <title>Booklist</title>
+    <link rel="stylesheet" href="../css/booklist-style.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <div>
+    <nav>
+      <a href="librarian-page.html"><img src="../image/LC%202.png" width="100" height="80"></a>
+       <div class="search-box">
+         <input type="int" id="myinput" placeholder="Enter Book Name" onkeyup="searchfun()">
+         <i class="fa fa-search"></i>
+       </div>
+       <div class="dropdown">
+           <button>About</button>
+           <ul>
+               <li><a href="librarian-profile.html"><i class="fa fa-user"></i>My Profile</a></li>
+               <li><a href="librarian-login.html"><i class="fa fa-sign-out"></i>Logout</a></li>
+           </ul>
+       </div>
+    </nav>
+    <div class="tb">
+        <table style="width: 100%" id="mytable">
+            <tr class="header">
+                <th width="55%">Book Name</th>
+                <th width="25%">Author Name</th>
+                <th width="20%">Available</th>
+            </tr>
+            <tr>
+                <td>Compilers: Principles, Techniques and Tools</td>
+                <td id="cl">Alfred V. Aho</td>
+                <td id="cl">15</td>
+            </tr>
+            <tr>
+                <td>Principles of Compiler Design</td>
+                <td id="cl">Alfred V. Aho</td>
+                <td id="cl">16</td>
+            </tr>
+            <tr>
+                <td>Introduction to Computers</td>
+                <td id="cl">Peter Norton</td>
+                <td id="cl">20</td>
+            </tr>
+            <tr>
+                <td>Computer Fundamentals</td>
+                <td id="cl">M. Lutfar Rahman</td>
+                <td id="cl">22</td>
+            </tr>
+            <tr>
+                <td>System Analysis and Design: A Practioner's Approach</td>
+                <td id="cl">Munawar Hafiz</td>
+                <td id="cl">13</td>
+            </tr>
+            <tr>
+                <td>System Analysis and Design</td>
+                <td id="cl">Elias M. Awad</td>
+                <td id="cl">10</td>
+            </tr>
+            <tr>
+                <td>Computer System Architecture</td>
+                <td id="cl">M. Morris Mano</td>
+                <td id="cl">25</td>
+            </tr>
+            <tr>
+                <td>Fundamentals of Computer Algorithms</td>
+                <td id="cl">Ellis Horowitz</td>
+                <td id="cl">11</td>
+            </tr>
+            <tr>
+                <td>Computer Organization and Design: The Hardware and Software Interface</td>
+                <td id="cl">David A. Patterson</td>
+                <td id="cl">09</td>
+            </tr>
+            <tr>
+                <td>Microprocessor Data Handbook</td>
+                <td id="cl">BPB Publications</td>
+                <td id="cl">23</td>
+            </tr>
+            <tr>
+                <td>Microprocessor and Microcomputer-based System Design</td>
+                <td id="cl">Md. Rafiquzzaman</td>
+                <td id="cl">21</td>
+            </tr>
+            <tr>
+                <td>Microprocessor X86 Programming</td>
+                <td id="cl">K.R. Venugopal</td>
+                <td id="cl">22</td>
+            </tr>
+            <tr>
+                <td>The Intel Microprocessors: Architecture, Programming & Interfacing</td>
+                <td id="cl">Barry B. Brey</td>
+                <td id="cl">14</td>
+            </tr>
+            <tr>
+                <td>Digital Electronics and Microprocessors</td>
+                <td id="cl">N.K. Datta</td>
+                <td id="cl">10</td>
+            </tr>
+            <tr>
+                <td>System Simulation</td>
+                <td id="cl">Geoffrey Gordon</td>
+                <td id="cl">12</td>
+            </tr>
+            <tr>
+                <td>Computer System Architecture</td>
+                <td id="cl">M. Morris Mano</td>
+                <td id="cl">05</td>
+            </tr>
+            <tr>
+                <td>Data & Computer Communications</td>
+                <td id="cl">William Stallings</td>
+                <td id="cl">25</td>
+            </tr>
+            <tr>
+                <td>Business Data Communications</td>
+                <td id="cl">William Stallings</td>
+                <td id="cl">17</td>
+            </tr>
+            <tr>
+                <td>Red Hat Linux Networking & System Administration</td>
+                <td id="cl">Terry Collings and Kurt Wall</td>
+                <td id="cl">13</td>
+            </tr>
+            <tr>
+                <td>Computer Networks</td>
+                <td id="cl">Tanenbaum</td>
+                <td id="cl">18</td>
+            </tr>
+            <tr>
+                <td>ISDN & Broadband ISDN with Frame Relay & ATM</td>
+                <td id="cl">William Stallings</td>
+                <td id="cl">19</td>
+            </tr>
+            <tr>
+                <td>Data Communications & Networking</td>
+                <td id="cl">Forouzan</td>
+                <td id="cl">12</td>
+            </tr>
+            <tr>
+                <td>Computer Networking: A Top Down Approach Featuring the Internet</td>
+                <td id="cl">James F. Kurose</td>
+                <td id="cl">11</td>
+            </tr>
+        </table>
+        </div>
+    
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('ul').toggleClass('active')
+            })
+        })
+        const searchfun= () =>{
+            let filter = document.getElementById('myinput').value.toUpperCase();
+            let mytable = document.getElementById('mytable');
+            let tr = mytable.getElementsByTagName('tr');
+            
+            for(var i=0; i<tr.length; i++){
+                let td = tr[i].getElementsByTagName('td')[0];
+                
+                if(td){
+                    let textvalue = td.textContent || td.innerHTML;
+                    
+                    if(textvalue.toUpperCase().lastIndexOf(filter) > -1){
+                        tr[i].style.display ="";
+                    }
+                    else{
+                       tr[i].style.display ="none"; 
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
